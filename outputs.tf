@@ -25,5 +25,5 @@ output "disks_ids" {
 
 output "subnet_id" {
   description = "The list of subnet IDs"
-  value       = yandex_compute_instance.this.*.subnet_id
+  value       = yandex_compute_instance.this.*.network_interface.0.subnet_id
 }
