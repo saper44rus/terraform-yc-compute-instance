@@ -22,3 +22,8 @@ output "disks_ids" {
   description = "The list of attached disk IDs"
   value       = var.secondary_disks != null && length(var.secondary_disks) > 0 ? [for disk in var.secondary_disks : disk.disk_id] : []
 }
+
+output "subnet_id" {
+  description = "The list of subnet IDs"
+  value       = yandex_compute_instance.this.*.subnet_id
+}
